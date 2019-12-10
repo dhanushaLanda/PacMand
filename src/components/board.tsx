@@ -1,6 +1,7 @@
 import * as React from "react";
 import Hero from "./hero";
 import food from "../css/food.svg";
+import FoodGenerator from "../foodGenerator";
 
 export default class Board extends React.Component<any,any> {
     constructor(props: any) {
@@ -9,7 +10,14 @@ export default class Board extends React.Component<any,any> {
             touched : false
         }
     }
+    renderFood() {
+        let foodGenerator = new FoodGenerator(800,1000,30);
+        return foodGenerator.generate().map(
+            (f) => <img id="food" style={f}  alt="" src={food}/>)
+    }
+
     componentDidMount(): void {
+
         setTimeout(() => {
             // @ts-ignore
             var foodElement = document.getElementById("food").getBoundingClientRect();
@@ -22,12 +30,12 @@ export default class Board extends React.Component<any,any> {
         },1000)
     }
     render(): React.ReactNode {
-        return <div className="Board">
-            {
-                !this.state.touched && <img id="food" src={food} alt=""/>
-            }
-
-            <Hero />
-        </div>
+        var food = this.renderFood()
+        return (
+            <div className="Board">
+                <div> {this.renderFood()}</div>
+                <Hero />
+            </div>
+            )
     }
 }

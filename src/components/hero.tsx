@@ -13,16 +13,16 @@ export default class Hero extends React.Component<any,any> {
         // if (!this.isImageInsideTheWindow()) {
         switch (event.key) {
             case 'ArrowLeft' :
-                this.setState({left : this.state.left - 10});
+                this.setState({left : this.state.left - 30});
                 break;
             case "ArrowRight" :
-                this.setState({left : this.state.left + 10});
+                this.setState({left : this.state.left + 30});
                 break;
             case "ArrowUp" :
-                this.setState({top: this.state.top - 10})
+                this.setState({top: this.state.top - 30})
                 break;
             case "ArrowDown" :
-                this.setState({top : this.state.top + 10});
+                this.setState({top : this.state.top + 30});
                 break;
 
         }
