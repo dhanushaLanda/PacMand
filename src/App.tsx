@@ -1,11 +1,11 @@
 import React from 'react';
-import './App.css';
-import Hero from "./components/hero";
+import './css/App.scss';
+import Board from "./components/board";
 
 const App: React.FC = () => {
   return (
     <div className="App">
-     <Hero/>
+       <Board />
     </div>
   );
 }

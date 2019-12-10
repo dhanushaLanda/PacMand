@@ -1,11 +1,24 @@
 .App {
   text-align: center;
-}
 
+}
+.Board{
+  //padding: 15px;
+  position: absolute;
+  top: 10%;
+  left :20%;
+  height: 800px;
+  width: 1000px;
+  border-color: black;
+  border-style: outset;
+}
 .App-logo {
   height: 40vmin;
 }
+#food {
+  margin: 5px;
 
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

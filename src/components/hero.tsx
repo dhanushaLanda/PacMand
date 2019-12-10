@@ -9,8 +9,8 @@ export default class Hero extends React.Component<any,any> {
         }
     }
     handleMouseDown(event: any){
-        console.log(window.screen.width);
-        if (!this.isImageInsideTheWindow()) {
+        // console.log(window.screen.width);
+        // if (!this.isImageInsideTheWindow()) {
         switch (event.key) {
             case 'ArrowLeft' :
                 this.setState({left : this.state.left - 10});
@@ -26,11 +26,9 @@ export default class Hero extends React.Component<any,any> {
                 break;
 
         }
-        }
     }
-
-    private isImageInsideTheWindow() {
-        return window.screen.width > this.state.left || (window.screen.height === this.state.top);
+    handleTouch(e : React.TouchEvent) {
+        console.log(e.touches);
     }
 
     componentDidMount(): void {
@@ -39,7 +37,8 @@ export default class Hero extends React.Component<any,any> {
 
     render(): React.ReactNode {
         return <div>
-            <img style= {this.state} id="hero-image" src={logo}  alt="logo"/>
+            <img onTouchMove={(e) =>{ this.handleTouch(e)}}
+                 style= {this.state} id="hero-image" src={logo}  alt="logo"/>
         </div>
     }
 }

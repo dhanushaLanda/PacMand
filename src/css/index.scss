@@ -12,5 +12,6 @@ code {
     monospace;
 }
 
-@import "../App.css";
+@import "App";
 @import "/hero.scss";
+@import "/ghost";
